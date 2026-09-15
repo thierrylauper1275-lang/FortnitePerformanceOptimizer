@@ -18,22 +18,23 @@
                     
                     <StackPanel Grid.Column="0" Margin="10">
                         <TextBlock Style="{StaticResource TextBlockLabelStyle}" Text="Average FPS" />
-                        <TextBlock Style="{StaticResource TextBlockValueStyle}" Text="{Binding AverageFps, StringFormat='{0:F1}'}" />
+                        <TextBlock Style="{StaticResource TextBlockValueStyle}" Text="{Binding AverageFps, StringFormat='{0:F1}', FallbackValue='--'}" />
                     </StackPanel>
 
                     <StackPanel Grid.Column="1" Margin="10">
                         <TextBlock Style="{StaticResource TextBlockLabelStyle}" Text="1% Low" />
-                        <TextBlock Style="{StaticResource TextBlockValueStyle}" Text="{Binding Fps1Low, StringFormat='{0:F1}'}" />
+                        <TextBlock Style="{StaticResource TextBlockValueStyle}" Text="{Binding Fps1Low, StringFormat='{0:F1}', FallbackValue='--'}" />
                     </StackPanel>
 
                     <StackPanel Grid.Column="2" Margin="10">
                         <TextBlock Style="{StaticResource TextBlockLabelStyle}" Text="0.1% Low" />
-                        <TextBlock Style="{StaticResource TextBlockValueStyle}" Text="{Binding Fps01Low, StringFormat='{0:F1}'}" />
+                        <TextBlock Style="{StaticResource TextBlockValueStyle}" Text="{Binding Fps01Low, StringFormat='{0:F1}', FallbackValue='--'}" />
                     </StackPanel>
 
                     <StackPanel Grid.Column="3" Margin="10">
                         <TextBlock Style="{StaticResource TextBlockLabelStyle}" Text="Frametime" />
-                        <TextBlock Style="{StaticResource TextBlockValueStyle}" Text="{Binding AverageFrametimeMs, StringFormat='{0:F2}'} ms" />
+                        <TextBlock Style="{StaticResource TextBlockValueStyle}" Text="{Binding AverageFrametimeMs, StringFormat='{0:F2}', FallbackValue='--'}" />
+                        <TextBlock Foreground="#a0a0a0" FontSize="11" Text="ms" />
                     </StackPanel>
                 </Grid>
             </GroupBox>
@@ -49,13 +50,13 @@
                     <StackPanel Grid.Column="0" Margin="10">
                         <TextBlock Style="{StaticResource TextBlockLabelStyle}" Text="Overall CPU Usage" />
                         <ProgressBar Height="20" Maximum="100" Value="{Binding CpuUsagePercent}" Background="#404040" Foreground="#4caf50" />
-                        <TextBlock Style="{StaticResource TextBlockValueStyle}" Text="{Binding CpuUsagePercent, StringFormat='{0:F1}%'}" />
+                        <TextBlock Style="{StaticResource TextBlockValueStyle}" Text="{Binding CpuUsagePercent, StringFormat='{0:F1}%', FallbackValue='--'}" />
                     </StackPanel>
 
                     <StackPanel Grid.Column="1" Margin="10">
                         <TextBlock Style="{StaticResource TextBlockLabelStyle}" Text="Fortnite Process CPU" />
                         <ProgressBar Height="20" Maximum="100" Value="{Binding FortniteProcessCpuPercent}" Background="#404040" Foreground="#ff9800" />
-                        <TextBlock Style="{StaticResource TextBlockValueStyle}" Text="{Binding FortniteProcessCpuPercent, StringFormat='{0:F1}%'}" />
+                        <TextBlock Style="{StaticResource TextBlockValueStyle}" Text="{Binding FortniteProcessCpuPercent, StringFormat='{0:F1}%', FallbackValue='--'}" />
                     </StackPanel>
                 </Grid>
             </GroupBox>
@@ -65,7 +66,7 @@
                 <StackPanel>
                     <TextBlock Style="{StaticResource TextBlockLabelStyle}" Text="GPU Utilization" />
                     <ProgressBar Height="20" Maximum="100" Value="{Binding GpuUsagePercent}" Background="#404040" Foreground="#2196f3" />
-                    <TextBlock Style="{StaticResource TextBlockValueStyle}" Text="{Binding GpuUsagePercent, StringFormat='{0:F1}%'}" />
+                    <TextBlock Style="{StaticResource TextBlockValueStyle}" Text="{Binding GpuUsagePercent, StringFormat='{0:F1}%', FallbackValue='--'}" />
                 </StackPanel>
             </GroupBox>
 
@@ -74,9 +75,9 @@
                 <StackPanel>
                     <TextBlock Style="{StaticResource TextBlockLabelStyle}" Text="System RAM Usage" />
                     <ProgressBar Height="20" Maximum="100" Value="{Binding RamUsagePercent}" Background="#404040" Foreground="#9c27b0" />
-                    <TextBlock Style="{StaticResource TextBlockValueStyle}" Text="{Binding RamUsagePercent, StringFormat='{0:F1}%'}" />
+                    <TextBlock Style="{StaticResource TextBlockValueStyle}" Text="{Binding RamUsagePercent, StringFormat='{0:F1}%', FallbackValue='--'}" />
                     <TextBlock Style="{StaticResource TextBlockLabelStyle}" Margin="0,15,0,2" Text="Fortnite RAM Usage" />
-                    <TextBlock Style="{StaticResource TextBlockValueStyle}" Text="{Binding FortniteRamUsageMb, StringFormat='{0:F0} MB'}" />
+                    <TextBlock Style="{StaticResource TextBlockValueStyle}" Text="{Binding FortniteRamUsageMb, StringFormat='{0:F0} MB', FallbackValue='--'}" />
                 </StackPanel>
             </GroupBox>
 
@@ -84,7 +85,7 @@
             <GroupBox Header="Network" Foreground="#ffffff" Background="#252525" Padding="15" Margin="0,0,0,15">
                 <StackPanel>
                     <TextBlock Style="{StaticResource TextBlockLabelStyle}" Text="Ping to DNS Servers" />
-                    <TextBlock Style="{StaticResource TextBlockValueStyle}" Text="{Binding PingMs, StringFormat='{0:F1} ms'}" />
+                    <TextBlock Style="{StaticResource TextBlockValueStyle}" Text="{Binding PingMs, StringFormat='{0:F1} ms', FallbackValue='--'}" />
                     <TextBlock Style="{StaticResource TextBlockLabelStyle}" Margin="0,10,0,2" Text="Note: This is general internet ping, not Fortnite server ping. Check in-game for accurate server latency." Foreground="#ff9800" FontSize="11" />
                 </StackPanel>
             </GroupBox>
